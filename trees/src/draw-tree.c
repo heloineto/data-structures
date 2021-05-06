@@ -1,6 +1,6 @@
 #include "avl-node-def.c"
 
-int _print_t(Node *tree, int is_left, int offset, int depth, char s[20][255])
+int _print_t(Node *tree, int isLeft, int offset, int depth, char s[20][255])
 {
   char b[20];
   int width = 5;
@@ -16,7 +16,7 @@ int _print_t(Node *tree, int is_left, int offset, int depth, char s[20][255])
   for (int i = 0; i < width; i++)
     s[2 * depth][offset + left + i] = b[i];
 
-  if (depth && is_left)
+  if (depth && isLeft)
   {
 
     for (int i = 0; i < width + right; i++)
@@ -25,7 +25,7 @@ int _print_t(Node *tree, int is_left, int offset, int depth, char s[20][255])
     s[2 * depth - 1][offset + left + width / 2] = '+';
     s[2 * depth - 1][offset + left + width + right + width / 2] = '+';
   }
-  else if (depth && !is_left)
+  else if (depth && !isLeft)
   {
 
     for (int i = 0; i < left + width; i++)
