@@ -1,6 +1,6 @@
 #include "avl-node-def.c"
 
-int _print_t(Node *tree, int isLeft, int offset, int depth, char s[20][255])
+int _printTree(Node *tree, int isLeft, int offset, int depth, char s[20][255])
 {
   char b[20];
   int width = 5;
@@ -10,8 +10,8 @@ int _print_t(Node *tree, int isLeft, int offset, int depth, char s[20][255])
 
   sprintf(b, "(%03d)", tree->key);
 
-  int left = _print_t(tree->left, 1, offset, depth + 1, s);
-  int right = _print_t(tree->right, 0, offset + left + width, depth + 1, s);
+  int left = _printTree(tree->left, 1, offset, depth + 1, s);
+  int right = _printTree(tree->right, 0, offset + left + width, depth + 1, s);
 
   for (int i = 0; i < width; i++)
     s[2 * depth][offset + left + i] = b[i];
@@ -44,7 +44,7 @@ void drawTree(Node *tree)
   for (int i = 0; i < 20; i++)
     sprintf(s[i], "%80s", " ");
 
-  _print_t(tree, 0, 0, 0, s);
+  _printTree(tree, 0, 0, 0, s);
 
   for (int i = 0; i < 20; i++)
     printf("%s\n", s[i]);
