@@ -16,8 +16,6 @@ int maxInt(int a, int b)
   return (a > b) ? a : b;
 }
 
-/* Helper function that allocates a new node with the given key and
-    NULL left and right pointers. */
 struct Node *newNode(int key)
 {
   struct Node *node = (struct Node *)
@@ -29,8 +27,6 @@ struct Node *newNode(int key)
   return (node);
 }
 
-// A utility function to right rotate subtree rooted with y
-// See the diagram given above.
 struct Node *rightRotate(struct Node *y)
 {
   struct Node *x = y->left;
