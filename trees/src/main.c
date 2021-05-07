@@ -11,7 +11,6 @@ int getNodeHeight(struct Node *N)
   return N->height;
 }
 
-// A utility function to get maximum of two integers
 int maxInt(int a, int b)
 {
   return (a > b) ? a : b;
