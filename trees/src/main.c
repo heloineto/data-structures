@@ -44,8 +44,6 @@ struct Node *rightRotate(struct Node *y)
   return x;
 }
 
-// A utility function to left rotate subtree rooted with x
-// See the diagram given above.
 struct Node *leftRotate(struct Node *x)
 {
   struct Node *y = x->right;
